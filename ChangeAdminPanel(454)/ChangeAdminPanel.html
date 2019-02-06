@@ -1,0 +1,20 @@
+
+
+<li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">@(ViewData["FullName"])<span class="caret"></span></a>
+                <ul class="dropdown-menu li-dropdown" style="padding-top: 5px;">
+                    <li class="li-dropdown">
+                        <a class="li-dropdown" href="~/Manage/Index">My Info</a>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Admin Panel", "Index", "User", new { area = "Employer"} , new { @class = "li-dropdown" } )</li>
+
+                        <li class="li-dropdown"><a class="li-dropdown" href="~/WorkTimeEvent/Index">User Panel</a></li>
+                    }
+                    <li><hr /></li>
+                    <li>
+                        <a class="li-dropdown btn" href="javascript:document.getElementById('logoutForm').submit()"> Log Off</a>
+                    </li>
+                </ul>
+            </li>
